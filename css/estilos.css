@@ -1,0 +1,1038 @@
+/* =========================================================
+   Mentendes — estilos generales
+   Paleta tranquila, texto grande y buen contraste para que
+   el sitio sea fácil de usar para cualquier persona.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+  /* Colores */
+  --verde: #4f7a6a;          /* color principal (salvia) */
+  --verde-oscuro: #2f5246;
+  --verde-claro: #e3eee9;
+  --crema: #faf7f2;          /* fondo general */
+  --arena: #f1ebe1;          /* fondo de secciones alternas */
+  --lavanda: #e9e6f3;        /* acento para la zona privada */
+  --terracota: #c0694e;      /* hilo del logo */
+  --texto: #24302c;
+  --texto-suave: #55625d;
+  --blanco: #ffffff;
+  --borde: #d9dfdb;
+  --alerta: #9a3b2e;
+
+  /* Tipografía */
+  --fuente-titulos: "Fraunces", Georgia, serif;
+  --fuente-texto: "Nunito", "Segoe UI", Arial, sans-serif;
+
+  /* Medidas */
+  --ancho-max: 1120px;
+  --radio: 14px;
+  --sombra: 0 6px 20px rgba(36, 48, 44, 0.08);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 1.125rem; /* 18px: más cómodo de leer */
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--crema);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--verde-oscuro);
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+h3,
+.h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--verde-oscuro);
+  text-underline-offset: 3px;
+}
+
+/* Foco visible para quien navega con teclado */
+:focus-visible {
+  outline: 3px solid #c58b2b;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Enlace "saltar al contenido" (accesibilidad) */
+.saltar {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+.saltar:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.seccion {
+  padding: 4rem 0;
+}
+
+.seccion--arena {
+  background: var(--arena);
+}
+
+.seccion__intro {
+  max-width: 680px;
+  color: var(--texto-suave);
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Encabezado y menú ---------- */
+.encabezado {
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.encabezado .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-family: var(--fuente-titulos);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+}
+
+/* Logo: contorno de una cabeza con un hilo enredado adentro
+   que sale por la nuca y se desenreda hacia el nombre */
+.logo__cabeza {
+  width: 82px;
+  height: 48px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.cabeza__contorno,
+.cabeza__enredo ellipse,
+.ovillo__hilo {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cabeza__contorno {
+  stroke: var(--verde);
+  stroke-width: 1.8;
+}
+
+.cabeza__enredo ellipse {
+  stroke: var(--verde);
+  stroke-width: 1.4;
+}
+
+.ovillo__hilo {
+  stroke: var(--terracota);
+  stroke-width: 1.8;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: desenredar 2s ease-in-out 0.3s both;
+}
+
+/* El enredo gira un poco mientras el hilo se suelta */
+.cabeza__enredo {
+  transform-origin: 30px 20px;
+  animation: girar 2s ease-out 0.3s both;
+}
+
+.logo:hover .ovillo__hilo {
+  animation: desenredar 2s ease-in-out both;
+}
+.logo:hover .cabeza__enredo {
+  animation: girar-hover 2s ease-out both;
+}
+
+@keyframes desenredar {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes girar {
+  from { transform: rotate(-120deg); }
+  to   { transform: rotate(0deg); }
+}
+
+/* Igual que "girar", pero con otro nombre para que se repita al pasar el ratón */
+@keyframes girar-hover {
+  from { transform: rotate(-120deg); }
+  to   { transform: rotate(0deg); }
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.menu a {
+  display: block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+.menu a:hover {
+  background: var(--verde-claro);
+}
+
+.menu a[aria-current="page"] {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.menu .menu__acceso {
+  background: var(--verde);
+  color: var(--blanco);
+}
+.menu .menu__acceso:hover,
+.menu .menu__acceso[aria-current="page"] {
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--verde);
+  background: var(--verde);
+  color: var(--blanco);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.boton:hover {
+  background: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+}
+
+.boton--secundario {
+  background: transparent;
+  color: var(--verde-oscuro);
+}
+.boton--secundario:hover {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.boton--peligro {
+  background: transparent;
+  border-color: var(--alerta);
+  color: var(--alerta);
+}
+.boton--peligro:hover {
+  background: #f7e7e4;
+  border-color: var(--alerta);
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* ---------- Portada (hero) ---------- */
+.portada {
+  padding: 4.5rem 0;
+  background: linear-gradient(160deg, var(--verde-claro) 0%, var(--crema) 70%);
+}
+
+.portada .contenedor {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.portada__texto p {
+  font-size: 1.25rem;
+  color: var(--texto-suave);
+  max-width: 560px;
+}
+
+.portada__imagen {
+  aspect-ratio: 4 / 3;
+  border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+  background:
+    radial-gradient(circle at 30% 30%, #b9d3c7 0 25%, transparent 26%),
+    radial-gradient(circle at 70% 65%, #d7cfe8 0 30%, transparent 31%),
+    var(--verde-claro);
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: var(--blanco);
+  color: var(--verde-oscuro);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Encabezado simple de páginas internas */
+.cabecera-pagina {
+  padding: 3.5rem 0 2.5rem;
+  background: var(--verde-claro);
+}
+.cabecera-pagina p {
+  max-width: 680px;
+  color: var(--texto-suave);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* ---------- Tarjetas ---------- */
+.grilla {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.75rem;
+  box-shadow: var(--sombra);
+}
+
+.tarjeta p:last-child {
+  margin-bottom: 0;
+}
+
+.tarjeta__icono {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--verde-claro);
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+/* Profesionales */
+.profesional {
+  text-align: center;
+}
+
+.profesional__foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: var(--verde-claro);
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-titulos);
+  font-size: 2.4rem;
+  color: var(--verde-oscuro);
+}
+
+.profesional__especialidad {
+  color: var(--verde);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.chips li {
+  font-size: 0.9rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--arena);
+}
+
+/* Ficha completa de cada profesional */
+.indice-equipo {
+  margin-bottom: 2rem;
+}
+.indice-equipo .chips {
+  justify-content: flex-start;
+  margin: 0;
+}
+.indice-equipo a {
+  text-decoration: none;
+  font-weight: 600;
+}
+.indice-equipo li:hover {
+  background: var(--verde-claro);
+}
+
+.chips--izq {
+  justify-content: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.ficha {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+  scroll-margin-top: 100px; /* que el encabezado fijo no tape la ficha */
+}
+
+/* Foto: si la imagen no existe, se ven las iniciales de fondo */
+.ficha__foto {
+  position: relative;
+  aspect-ratio: 11 / 13;
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: var(--verde-claro);
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-titulos);
+  font-size: 3.5rem;
+  color: var(--verde-oscuro);
+}
+
+.ficha__img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.ficha__info h2 {
+  margin-bottom: 0.2rem;
+}
+
+/* Enfoque de cada profesional: etiqueta de color bien visible.
+   Cada enfoque tiene su color (--c) y su fondo (--f). */
+.enfoque {
+  --c: var(--verde-oscuro);
+  --f: var(--verde-claro);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.4rem 0 0.6rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.4rem;
+  border-radius: 999px;
+  border: 2px solid var(--c);
+  background: var(--f);
+  color: var(--c);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+.enfoque span {
+  background: var(--c);
+  color: var(--blanco);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.enfoque:hover {
+  text-decoration: underline;
+}
+
+.enfoque--psicoanalisis, .enfoque-info--psicoanalisis { --c: #4b4180; --f: #ece9f6; }
+.enfoque--cognitivo,     .enfoque-info--cognitivo     { --c: #1f5f7a; --f: #e3f0f5; }
+.enfoque--sistemico,     .enfoque-info--sistemico     { --c: #9a4a32; --f: #f7e9e3; }
+.enfoque--humanista,     .enfoque-info--humanista     { --c: #2f5246; --f: #e3eee9; }
+.enfoque--gestalt,       .enfoque-info--gestalt       { --c: #7a5a12; --f: #f6efdc; }
+.enfoque--integrativo,   .enfoque-info--integrativo   { --c: #6b3d63; --f: #f3e6f0; }
+
+.enfoque-info {
+  border-top: 6px solid var(--c);
+}
+.enfoque-info h3 {
+  color: var(--c);
+}
+
+#enfoques {
+  scroll-margin-top: 80px;
+}
+
+.ficha__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.ficha__datos div {
+  background: var(--arena);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
+.ficha__datos dt {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.ficha__datos dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.ficha__columnas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0 2rem;
+}
+
+.ficha__columnas h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.ficha__columnas ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+}
+
+.ficha__columnas li {
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 700px) {
+  .ficha {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .ficha__foto {
+    max-width: 200px;
+  }
+}
+
+/* ---------- Pasos (cómo pedir turno) ---------- */
+.pasos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  counter-reset: paso;
+}
+
+.pasos li {
+  counter-increment: paso;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  border: 1px solid var(--borde);
+}
+
+.pasos li::before {
+  content: counter(paso);
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--blanco);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- Modalidad presencial / virtual ---------- */
+.modalidades {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.modalidad {
+  border-radius: var(--radio);
+  padding: 2rem;
+  background: var(--blanco);
+  border-top: 6px solid var(--verde);
+  box-shadow: var(--sombra);
+}
+
+.modalidad--virtual {
+  border-top-color: #8a7fb8;
+}
+
+/* ---------- Formularios ---------- */
+.formulario {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.campo label,
+.campo legend {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.ayuda {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  margin-top: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: var(--texto);
+  background: var(--blanco);
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--verde);
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.opcion {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+  background: var(--blanco);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.opcion input {
+  margin-top: 0.35rem;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--verde);
+}
+
+.opcion:has(input:checked) {
+  border-color: var(--verde);
+  background: var(--verde-claro);
+}
+
+.dos-columnas {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* ---------- Central de turnos ---------- */
+.turnos-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.horarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.6rem;
+}
+
+.horario {
+  position: relative;
+}
+
+.horario input {
+  position: absolute;
+  opacity: 0;
+}
+
+.horario span {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 0.4rem;
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+  background: var(--blanco);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.horario input:checked + span {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: var(--blanco);
+}
+
+.horario input:focus-visible + span {
+  outline: 3px solid #c58b2b;
+  outline-offset: 2px;
+}
+
+.horario input:disabled + span {
+  background: var(--arena);
+  color: #9aa39f;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.turno {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.turno:last-child {
+  border-bottom: 0;
+}
+
+.turno__dato {
+  margin: 0;
+}
+
+.insignia {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+.insignia--virtual {
+  background: var(--lavanda);
+  color: #4b4180;
+}
+
+.botones--chicos .boton {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Zona privada ---------- */
+.aviso-privado {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--lavanda);
+  border-radius: var(--radio);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.aviso-privado p {
+  margin: 0;
+}
+
+.acceso {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.espacio-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.panel-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.panel-lateral a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.panel-lateral a:hover {
+  background: var(--verde-claro);
+}
+
+.devolucion {
+  border-left: 5px solid #8a7fb8;
+}
+
+.devolucion__meta {
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  margin-bottom: 0.6rem;
+}
+
+.material {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.material:last-child {
+  border-bottom: 0;
+}
+
+/* ---------- Contacto ---------- */
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.datos-contacto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.datos-contacto li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.datos-contacto strong {
+  display: block;
+  color: var(--verde-oscuro);
+}
+
+.mapa {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: var(--radio);
+  margin-top: 1.5rem;
+}
+
+/* Preguntas frecuentes (sin JavaScript, con <details>) */
+details {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.8rem;
+}
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+details[open] summary {
+  margin-bottom: 0.6rem;
+}
+
+/* ---------- Banda de llamada a la acción ---------- */
+.llamada {
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.llamada h2 {
+  color: var(--blanco);
+}
+.llamada p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.9;
+}
+.llamada .boton {
+  background: var(--blanco);
+  color: var(--verde-oscuro);
+  border-color: var(--blanco);
+}
+.llamada .boton:hover {
+  background: var(--verde-claro);
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+  background: #22312c;
+  color: #dfe7e3;
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+  font-size: 1rem;
+}
+
+.pie a {
+  color: #dfe7e3;
+}
+
+.pie__columnas {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.pie h2 {
+  font-size: 1.1rem;
+  color: var(--blanco);
+}
+
+.pie ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pie li {
+  margin-bottom: 0.4rem;
+}
+
+.pie__urgencia {
+  border-top: 1px solid #3d4f48;
+  padding-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Adaptación a pantallas chicas ---------- */
+@media (max-width: 860px) {
+  .portada .contenedor,
+  .turnos-layout,
+  .espacio-layout,
+  .contacto-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .portada__imagen {
+    display: none;
+  }
+
+  .seccion {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  .encabezado {
+    position: static;
+  }
+
+  .menu ul {
+    justify-content: center;
+  }
+
+  .encabezado .contenedor {
+    justify-content: center;
+  }
+
+  .tarjeta,
+  .modalidad {
+    padding: 1.4rem;
+  }
+}
+
+/* Respeta a quien prefiere menos animación */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

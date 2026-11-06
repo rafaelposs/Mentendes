@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de turnos | Mentendes</title>
+  <meta name="description" content="Pedí, modificá o cancelá tu turno en Mentendes. Atención presencial o virtual.">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="logo" href="index.html">
+        <svg class="logo__cabeza" viewBox="0 0 82 48" aria-hidden="true" focusable="false">
+          <path class="cabeza__contorno" transform="translate(56 0) scale(-1 1)" d="M14 47 C 14 41, 8 36, 8 26 C 8 13, 17 4, 28 4 C 38 4, 45 11, 45 20 L 48.5 26.5 C 49 28, 48 29, 46 29 L 46 31 C 47 31.5, 47 33, 45.5 33.5 C 46 35.5, 45 37.5, 42 37.5 L 38.5 37.5 C 36 37.5, 35 41, 35 47"/>
+          <g class="cabeza__enredo">
+            <ellipse cx="29" cy="18" rx="8" ry="5.5" transform="rotate(20 29 18)"/>
+            <ellipse cx="32" cy="21" rx="7" ry="4.5" transform="rotate(-40 32 21)"/>
+            <ellipse cx="30" cy="20" rx="4.5" ry="8" transform="rotate(12 30 20)"/>
+            <ellipse cx="27" cy="22" rx="6" ry="3.5" transform="rotate(65 27 22)"/>
+          </g>
+          <path class="ovillo__hilo" pathLength="1" d="M31 16 C 38 12, 40 22, 33 24 C 26 26, 24 16, 32 14 C 39 12, 42 21, 47 19 C 53 16, 56 26, 63 21 S 73 13, 80 17"/>
+        </svg>
+        Mentendes
+      </a>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="profesionales.html">Profesionales</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="turnos.html" aria-current="page">Turnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a class="menu__acceso" href="acceso.html">Mi espacio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="cabecera-pagina">
+      <div class="contenedor">
+        <h1>Central de turnos</h1>
+        <p>Consultá los horarios disponibles y elegí si querés atenderte en el consultorio o por videollamada.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor turnos-layout">
+        <!-- Pedir turno (sin JavaScript: el formulario es solo la maqueta visual) -->
+        <div class="tarjeta">
+          <h2>Pedir un turno</h2>
+          <form class="formulario" action="#" method="post">
+            <div class="campo">
+              <label for="profesional">Profesional</label>
+              <select id="profesional" name="profesional">
+                <option value="">Cualquier profesional disponible</option>
+                <option>Lic. Laura Gómez — Adultos</option>
+                <option>Lic. Martín Ruiz — Adolescentes</option>
+                <option>Lic. Sofía Pereyra — Pareja y familia</option>
+                <option>Lic. Diego Acosta — Cognitivo-conductual</option>
+                <option>Lic. Valeria Castro — Duelo y orientación vocacional</option>
+                <option>Lic. Julián Medina — Adultos mayores</option>
+              </select>
+            </div>
+
+            <fieldset class="campo">
+              <legend>Modalidad</legend>
+              <div class="opciones">
+                <label class="opcion">
+                  <input type="radio" name="modalidad" value="presencial" checked>
+                  <span><strong>Presencial</strong><br>En el consultorio</span>
+                </label>
+                <label class="opcion">
+                  <input type="radio" name="modalidad" value="virtual">
+                  <span><strong>Virtual</strong><br>Por videollamada</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="campo">
+              <label for="fecha">Día</label>
+              <input type="date" id="fecha" name="fecha">
+            </div>
+
+            <fieldset class="campo">
+              <legend>Horarios disponibles</legend>
+              <div class="horarios">
+                <label class="horario"><input type="radio" name="hora" value="09:00"><span>09:00</span></label>
+                <label class="horario"><input type="radio" name="hora" value="10:00" disabled><span>10:00</span></label>
+                <label class="horario"><input type="radio" name="hora" value="11:00"><span>11:00</span></label>
+                <label class="horario"><input type="radio" name="hora" value="14:00"><span>14:00</span></label>
+                <label class="horario"><input type="radio" name="hora" value="15:00" disabled><span>15:00</span></label>
+                <label class="horario"><input type="radio" name="hora" value="16:00"><span>16:00</span></label>
+                <label class="horario"><input type="radio" name="hora" value="18:00"><span>18:00</span></label>
+                <label class="horario"><input type="radio" name="hora" value="19:00"><span>19:00</span></label>
+              </div>
+              <span class="ayuda">Los horarios tachados ya están ocupados.</span>
+            </fieldset>
+
+            <div class="dos-columnas">
+              <div class="campo">
+                <label for="nombre">Nombre y apellido</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="name">
+              </div>
+              <div class="campo">
+                <label for="dni">DNI</label>
+                <input type="text" id="dni" name="dni" inputmode="numeric">
+              </div>
+              <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+              </div>
+              <div class="campo">
+                <label for="cobertura">Cobertura</label>
+                <select id="cobertura" name="cobertura">
+                  <option>Obra social</option>
+                  <option>Prepaga</option>
+                  <option>Particular</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" autocomplete="email">
+              <span class="ayuda">Te enviamos la confirmación y un recordatorio el día anterior.</span>
+            </div>
+
+            <button class="boton" type="submit">Confirmar turno</button>
+          </form>
+        </div>
+
+        <!-- Mis turnos: modificar o cancelar -->
+        <aside>
+          <div class="tarjeta">
+            <h2>Mis próximos turnos</h2>
+            <p class="ayuda">Ejemplo de cómo se ven tus turnos una vez que ingresás.</p>
+
+            <div class="turno">
+              <div>
+                <p class="turno__dato"><strong>Jueves 12 de noviembre, 16:00</strong></p>
+                <p class="turno__dato">Lic. Laura Gómez</p>
+                <span class="insignia">Presencial</span>
+              </div>
+              <div class="botones botones--chicos">
+                <a class="boton boton--secundario" href="#">Modificar</a>
+                <a class="boton boton--peligro" href="#">Cancelar</a>
+              </div>
+            </div>
+
+            <div class="turno">
+              <div>
+                <p class="turno__dato"><strong>Jueves 19 de noviembre, 16:00</strong></p>
+                <p class="turno__dato">Lic. Laura Gómez</p>
+                <span class="insignia insignia--virtual">Virtual</span>
+              </div>
+              <div class="botones botones--chicos">
+                <a class="boton boton--secundario" href="#">Modificar</a>
+                <a class="boton boton--peligro" href="#">Cancelar</a>
+              </div>
+            </div>
+
+            <p style="margin-top:1rem"><a href="acceso.html">Ingresá a Mi espacio</a> para ver todos tus turnos.</p>
+          </div>
+
+          <div class="tarjeta" style="margin-top:1.5rem">
+            <h3>¿Necesitás ayuda?</h3>
+            <p>Si te cuesta usar el formulario, te damos el turno por teléfono.</p>
+            <a class="boton boton--secundario" href="tel:+541100000000">Llamar al (011) 0000-0000</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>Mentendes</h2>
+          <p>Centro de atención psicológica.<br>Zona oeste, Gran Buenos Aires.</p>
+        </div>
+        <div>
+          <h2>Secciones</h2>
+          <ul>
+            <li><a href="profesionales.html">Profesionales</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="turnos.html">Central de turnos</a></li>
+            <li><a href="acceso.html">Mi espacio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="tel:+541100000000">(011) 0000-0000</a></li>
+            <li><a href="mailto:hola@mentendes.com.ar">hola@mentendes.com.ar</a></li>
+            <li>Lun. a vie. de 8 a 21 h</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__urgencia"><strong>¿Estás atravesando una urgencia?</strong> Este sitio no ofrece atención de emergencias. Llamá al 135 (Centro de Asistencia al Suicida, gratuito desde CABA y GBA) o acercate a la guardia más cercana.</p>
+      <p>&copy; 2026 Mentendes. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

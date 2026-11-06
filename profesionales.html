@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profesionales | Mentendes</title>
+  <meta name="description" content="Conocé al equipo de psicólogas y psicólogos de Mentendes y sus especialidades.">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="logo" href="index.html">
+        <svg class="logo__cabeza" viewBox="0 0 82 48" aria-hidden="true" focusable="false">
+          <path class="cabeza__contorno" transform="translate(56 0) scale(-1 1)" d="M14 47 C 14 41, 8 36, 8 26 C 8 13, 17 4, 28 4 C 38 4, 45 11, 45 20 L 48.5 26.5 C 49 28, 48 29, 46 29 L 46 31 C 47 31.5, 47 33, 45.5 33.5 C 46 35.5, 45 37.5, 42 37.5 L 38.5 37.5 C 36 37.5, 35 41, 35 47"/>
+          <g class="cabeza__enredo">
+            <ellipse cx="29" cy="18" rx="8" ry="5.5" transform="rotate(20 29 18)"/>
+            <ellipse cx="32" cy="21" rx="7" ry="4.5" transform="rotate(-40 32 21)"/>
+            <ellipse cx="30" cy="20" rx="4.5" ry="8" transform="rotate(12 30 20)"/>
+            <ellipse cx="27" cy="22" rx="6" ry="3.5" transform="rotate(65 27 22)"/>
+          </g>
+          <path class="ovillo__hilo" pathLength="1" d="M31 16 C 38 12, 40 22, 33 24 C 26 26, 24 16, 32 14 C 39 12, 42 21, 47 19 C 53 16, 56 26, 63 21 S 73 13, 80 17"/>
+        </svg>
+        Mentendes
+      </a>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="profesionales.html" aria-current="page">Profesionales</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="turnos.html">Turnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a class="menu__acceso" href="acceso.html">Mi espacio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="cabecera-pagina">
+      <div class="contenedor">
+        <h1>Nuestro equipo</h1>
+        <p>Conocé a quienes forman el equipo: su formación, su experiencia y cómo atienden.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <!-- Nombres y datos de ejemplo: reemplazar por los reales del centro.
+             Fotos: guardarlas en img/profesionales/ con el nombre que indica cada ficha.
+             Mientras no exista la foto, se muestran las iniciales.
+             Para cambiar una foto, cambiá la ruta dentro de url(...) en su ficha. -->
+        <nav class="indice-equipo" aria-label="Ir a un profesional">
+          <ul class="chips">
+            <li><a href="#laura-gomez">Laura Gómez</a></li>
+            <li><a href="#martin-ruiz">Martín Ruiz</a></li>
+            <li><a href="#sofia-pereyra">Sofía Pereyra</a></li>
+            <li><a href="#diego-acosta">Diego Acosta</a></li>
+            <li><a href="#valeria-castro">Valeria Castro</a></li>
+            <li><a href="#julian-medina">Julián Medina</a></li>
+          </ul>
+        </nav>
+
+        <article class="tarjeta ficha" id="laura-gomez">
+          <div class="ficha__foto">
+            <span aria-hidden="true">LG</span>
+            <span class="ficha__img" style="background-image: url('img/profesionales/laura-gomez.jpg')"></span>
+          </div>
+          <div class="ficha__info">
+            <h2 class="h3">Lic. Laura Gómez</h2>
+            <a class="enfoque enfoque--psicoanalisis" href="#enfoques"><span>Enfoque</span> Psicoanálisis</a>
+            <p class="profesional__especialidad">Psicología clínica de adultos</p>
+            <p>Ansiedad, estrés y acompañamiento en momentos de cambio.</p>
+            <dl class="ficha__datos">
+              <div><dt>Matrícula</dt><dd>M.P. 12.345</dd></div>
+              <div><dt>Edad</dt><dd>42 años</dd></div>
+              <div><dt>Experiencia</dt><dd>15 años</dd></div>
+            </dl>
+            <div class="ficha__columnas">
+              <div>
+                <h3>Estudios</h3>
+                <ul>
+                  <li>Licenciatura en Psicología — Universidad de Buenos Aires</li>
+                  <li>Especialización en Psicología Clínica — UBA</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Logros</h3>
+                <ul>
+                  <li>Coordinadora del equipo de adultos del centro desde 2018</li>
+                  <li>Docente en talleres sobre manejo de la ansiedad</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="chips chips--izq">
+              <li>Presencial</li><li>Virtual</li><li>Obra social</li>
+            </ul>
+            <a class="boton" href="turnos.html">Pedir turno con Laura</a>
+          </div>
+        </article>
+
+        <article class="tarjeta ficha" id="martin-ruiz">
+          <div class="ficha__foto">
+            <span aria-hidden="true">MR</span>
+            <span class="ficha__img" style="background-image: url('img/profesionales/martin-ruiz.jpg')"></span>
+          </div>
+          <div class="ficha__info">
+            <h2 class="h3">Lic. Martín Ruiz</h2>
+            <a class="enfoque enfoque--integrativo" href="#enfoques"><span>Enfoque</span> Integrativo</a>
+            <p class="profesional__especialidad">Adolescentes y jóvenes</p>
+            <p>Atención a partir de los 16 años: vínculos, estudio y proyecto de vida.</p>
+            <dl class="ficha__datos">
+              <div><dt>Matrícula</dt><dd>M.P. 23.456</dd></div>
+              <div><dt>Edad</dt><dd>35 años</dd></div>
+              <div><dt>Experiencia</dt><dd>9 años</dd></div>
+            </dl>
+            <div class="ficha__columnas">
+              <div>
+                <h3>Estudios</h3>
+                <ul>
+                  <li>Licenciatura en Psicología — Universidad Nacional de La Matanza</li>
+                  <li>Posgrado en Clínica con Adolescentes</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Logros</h3>
+                <ul>
+                  <li>Talleres de orientación en escuelas secundarias de la zona oeste</li>
+                  <li>Coautor de una guía para familias de adolescentes</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="chips chips--izq">
+              <li>Presencial</li><li>Virtual</li><li>Prepaga</li>
+            </ul>
+            <a class="boton" href="turnos.html">Pedir turno con Martín</a>
+          </div>
+        </article>
+
+        <article class="tarjeta ficha" id="sofia-pereyra">
+          <div class="ficha__foto">
+            <span aria-hidden="true">SP</span>
+            <span class="ficha__img" style="background-image: url('img/profesionales/sofia-pereyra.jpg')"></span>
+          </div>
+          <div class="ficha__info">
+            <h2 class="h3">Lic. Sofía Pereyra</h2>
+            <a class="enfoque enfoque--sistemico" href="#enfoques"><span>Enfoque</span> Sistémico</a>
+            <p class="profesional__especialidad">Terapia de pareja y familia</p>
+            <p>Comunicación, conflictos y acompañamiento familiar.</p>
+            <dl class="ficha__datos">
+              <div><dt>Matrícula</dt><dd>M.P. 34.567</dd></div>
+              <div><dt>Edad</dt><dd>47 años</dd></div>
+              <div><dt>Experiencia</dt><dd>20 años</dd></div>
+            </dl>
+            <div class="ficha__columnas">
+              <div>
+                <h3>Estudios</h3>
+                <ul>
+                  <li>Licenciatura en Psicología — Universidad de Morón</li>
+                  <li>Formación en Terapia Sistémica Familiar</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Logros</h3>
+                <ul>
+                  <li>Más de 20 años acompañando parejas y familias</li>
+                  <li>Disertante en jornadas de terapia familiar</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="chips chips--izq">
+              <li>Presencial</li><li>Virtual</li><li>Particular</li>
+            </ul>
+            <a class="boton" href="turnos.html">Pedir turno con Sofía</a>
+          </div>
+        </article>
+
+        <article class="tarjeta ficha" id="diego-acosta">
+          <div class="ficha__foto">
+            <span aria-hidden="true">DA</span>
+            <span class="ficha__img" style="background-image: url('img/profesionales/diego-acosta.jpg')"></span>
+          </div>
+          <div class="ficha__info">
+            <h2 class="h3">Lic. Diego Acosta</h2>
+            <a class="enfoque enfoque--cognitivo" href="#enfoques"><span>Enfoque</span> Cognitivo-conductual</a>
+            <p class="profesional__especialidad">Ansiedad y ataques de pánico</p>
+            <p>Ataques de pánico, fobias y trastornos del estado de ánimo.</p>
+            <dl class="ficha__datos">
+              <div><dt>Matrícula</dt><dd>M.P. 45.678</dd></div>
+              <div><dt>Edad</dt><dd>39 años</dd></div>
+              <div><dt>Experiencia</dt><dd>12 años</dd></div>
+            </dl>
+            <div class="ficha__columnas">
+              <div>
+                <h3>Estudios</h3>
+                <ul>
+                  <li>Licenciatura en Psicología — UCES</li>
+                  <li>Maestría en Terapia Cognitivo-Conductual</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Logros</h3>
+                <ul>
+                  <li>Pionero de la atención virtual en el centro</li>
+                  <li>Publicaciones sobre tratamiento del pánico</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="chips chips--izq">
+              <li>Virtual</li><li>Obra social</li><li>Prepaga</li>
+            </ul>
+            <a class="boton" href="turnos.html">Pedir turno con Diego</a>
+          </div>
+        </article>
+
+        <article class="tarjeta ficha" id="valeria-castro">
+          <div class="ficha__foto">
+            <span aria-hidden="true">VC</span>
+            <span class="ficha__img" style="background-image: url('img/profesionales/valeria-castro.jpg')"></span>
+          </div>
+          <div class="ficha__info">
+            <h2 class="h3">Lic. Valeria Castro</h2>
+            <a class="enfoque enfoque--humanista" href="#enfoques"><span>Enfoque</span> Humanista</a>
+            <p class="profesional__especialidad">Duelo y orientación vocacional</p>
+            <p>Acompañamiento en pérdidas y en la elección de carrera u oficio.</p>
+            <dl class="ficha__datos">
+              <div><dt>Matrícula</dt><dd>M.P. 56.789</dd></div>
+              <div><dt>Edad</dt><dd>51 años</dd></div>
+              <div><dt>Experiencia</dt><dd>24 años</dd></div>
+            </dl>
+            <div class="ficha__columnas">
+              <div>
+                <h3>Estudios</h3>
+                <ul>
+                  <li>Licenciatura en Psicología — Universidad de Buenos Aires</li>
+                  <li>Especialización en Orientación Vocacional y Ocupacional</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Logros</h3>
+                <ul>
+                  <li>Coordinadora de grupos de acompañamiento en duelo</li>
+                  <li>Más de 1.000 jóvenes orientados en su elección de carrera</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="chips chips--izq">
+              <li>Presencial</li><li>Particular</li>
+            </ul>
+            <a class="boton" href="turnos.html">Pedir turno con Valeria</a>
+          </div>
+        </article>
+
+        <article class="tarjeta ficha" id="julian-medina">
+          <div class="ficha__foto">
+            <span aria-hidden="true">JM</span>
+            <span class="ficha__img" style="background-image: url('img/profesionales/julian-medina.jpg')"></span>
+          </div>
+          <div class="ficha__info">
+            <h2 class="h3">Lic. Julián Medina</h2>
+            <a class="enfoque enfoque--gestalt" href="#enfoques"><span>Enfoque</span> Gestáltico</a>
+            <p class="profesional__especialidad">Adultos mayores</p>
+            <p>Bienestar emocional, soledad y nuevas etapas de la vida.</p>
+            <dl class="ficha__datos">
+              <div><dt>Matrícula</dt><dd>M.P. 67.890</dd></div>
+              <div><dt>Edad</dt><dd>58 años</dd></div>
+              <div><dt>Experiencia</dt><dd>30 años</dd></div>
+            </dl>
+            <div class="ficha__columnas">
+              <div>
+                <h3>Estudios</h3>
+                <ul>
+                  <li>Licenciatura en Psicología — Universidad del Salvador</li>
+                  <li>Especialización en Psicogerontología</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Logros</h3>
+                <ul>
+                  <li>Fundador del programa de talleres para adultos mayores del centro</li>
+                  <li>Reconocimiento municipal por su trabajo comunitario</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="chips chips--izq">
+              <li>Presencial</li><li>Virtual</li><li>Obra social</li>
+            </ul>
+            <a class="boton" href="turnos.html">Pedir turno con Julián</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Explicación de los enfoques -->
+    <section class="seccion seccion--arena" id="enfoques">
+      <div class="contenedor">
+        <h2>¿Qué es cada enfoque?</h2>
+        <p class="seccion__intro">El enfoque es la forma de trabajar de cada profesional. Todos son válidos: lo importante es que te sientas cómodo/a con la persona que te acompaña.</p>
+        <div class="grilla">
+          <article class="tarjeta enfoque-info enfoque-info--psicoanalisis">
+            <h3>Psicoanálisis</h3>
+            <p>Busca entender el origen de lo que te pasa a partir de tu historia, tus vínculos y lo que no siempre es consciente. Se habla con libertad.</p>
+          </article>
+          <article class="tarjeta enfoque-info enfoque-info--cognitivo">
+            <h3>Cognitivo-conductual</h3>
+            <p>Trabaja sobre pensamientos y hábitos concretos que generan malestar. Es práctico, con objetivos claros y ejercicios entre sesiones.</p>
+          </article>
+          <article class="tarjeta enfoque-info enfoque-info--sistemico">
+            <h3>Sistémico</h3>
+            <p>Mira los problemas en relación con tu entorno: pareja, familia o grupos. Suele incluir sesiones con otras personas de tu vida.</p>
+          </article>
+          <article class="tarjeta enfoque-info enfoque-info--humanista">
+            <h3>Humanista</h3>
+            <p>Pone el foco en tus recursos y en tu crecimiento personal, en un espacio de escucha cálido y sin juicios.</p>
+          </article>
+          <article class="tarjeta enfoque-info enfoque-info--gestalt">
+            <h3>Gestáltico</h3>
+            <p>Trabaja sobre lo que sentís aquí y ahora, prestando atención a las emociones y al cuerpo, para cerrar situaciones pendientes.</p>
+          </article>
+          <article class="tarjeta enfoque-info enfoque-info--integrativo">
+            <h3>Integrativo</h3>
+            <p>Combina herramientas de distintos enfoques y las adapta a cada persona y a cada momento del tratamiento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="llamada">
+          <h2>¿No sabés con quién atenderte?</h2>
+          <p>Escribinos y te ayudamos a elegir el profesional que mejor se adapte a lo que necesitás.</p>
+          <div class="botones" style="justify-content:center">
+            <a class="boton" href="turnos.html">Pedir un turno</a>
+            <a class="boton" href="contacto.html">Hacer una consulta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>Mentendes</h2>
+          <p>Centro de atención psicológica.<br>Zona oeste, Gran Buenos Aires.</p>
+        </div>
+        <div>
+          <h2>Secciones</h2>
+          <ul>
+            <li><a href="profesionales.html">Profesionales</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="turnos.html">Central de turnos</a></li>
+            <li><a href="acceso.html">Mi espacio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="tel:+541100000000">(011) 0000-0000</a></li>
+            <li><a href="mailto:hola@mentendes.com.ar">hola@mentendes.com.ar</a></li>
+            <li>Lun. a vie. de 8 a 21 h</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__urgencia"><strong>¿Estás atravesando una urgencia?</strong> Este sitio no ofrece atención de emergencias. Llamá al 135 (Centro de Asistencia al Suicida, gratuito desde CABA y GBA) o acercate a la guardia más cercana.</p>
+      <p>&copy; 2026 Mentendes. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

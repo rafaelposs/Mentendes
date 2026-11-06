@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingresar a Mi espacio | Mentendes</title>
+  <meta name="description" content="Ingresá a tu espacio privado de Mentendes con verificación de identidad.">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="logo" href="index.html">
+        <svg class="logo__cabeza" viewBox="0 0 82 48" aria-hidden="true" focusable="false">
+          <path class="cabeza__contorno" transform="translate(56 0) scale(-1 1)" d="M14 47 C 14 41, 8 36, 8 26 C 8 13, 17 4, 28 4 C 38 4, 45 11, 45 20 L 48.5 26.5 C 49 28, 48 29, 46 29 L 46 31 C 47 31.5, 47 33, 45.5 33.5 C 46 35.5, 45 37.5, 42 37.5 L 38.5 37.5 C 36 37.5, 35 41, 35 47"/>
+          <g class="cabeza__enredo">
+            <ellipse cx="29" cy="18" rx="8" ry="5.5" transform="rotate(20 29 18)"/>
+            <ellipse cx="32" cy="21" rx="7" ry="4.5" transform="rotate(-40 32 21)"/>
+            <ellipse cx="30" cy="20" rx="4.5" ry="8" transform="rotate(12 30 20)"/>
+            <ellipse cx="27" cy="22" rx="6" ry="3.5" transform="rotate(65 27 22)"/>
+          </g>
+          <path class="ovillo__hilo" pathLength="1" d="M31 16 C 38 12, 40 22, 33 24 C 26 26, 24 16, 32 14 C 39 12, 42 21, 47 19 C 53 16, 56 26, 63 21 S 73 13, 80 17"/>
+        </svg>
+        Mentendes
+      </a>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="profesionales.html">Profesionales</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="turnos.html">Turnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a class="menu__acceso" href="acceso.html" aria-current="page">Mi espacio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="seccion">
+      <div class="contenedor acceso">
+        <h1>Ingresá a Mi espacio</h1>
+        <div class="aviso-privado">
+          <span aria-hidden="true">🔒</span>
+          <p>Este es un espacio privado. Para proteger tu información, verificamos tu identidad en dos pasos.</p>
+        </div>
+
+        <!-- Paso 1: datos de ingreso -->
+        <div class="tarjeta">
+          <h2 class="h3">Paso 1 · Tus datos</h2>
+          <form class="formulario" action="#" method="post">
+            <div class="campo">
+              <label for="a-dni">DNI</label>
+              <input type="text" id="a-dni" name="dni" inputmode="numeric" autocomplete="username">
+            </div>
+            <div class="campo">
+              <label for="a-clave">Contraseña</label>
+              <input type="password" id="a-clave" name="clave" autocomplete="current-password">
+              <span class="ayuda"><a href="contacto.html">¿Olvidaste tu contraseña?</a></span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Paso 2: código de verificación -->
+        <div class="tarjeta" style="margin-top:1.5rem">
+          <h2 class="h3">Paso 2 · Código de verificación</h2>
+          <form class="formulario" action="mi-espacio.html" method="get">
+            <div class="campo">
+              <label for="a-codigo">Código de 6 números</label>
+              <input type="text" id="a-codigo" name="codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="6">
+              <span class="ayuda">Te lo enviamos por mensaje al celular que registraste en el centro.</span>
+            </div>
+            <button class="boton" type="submit">Ingresar</button>
+          </form>
+        </div>
+
+        <p style="margin-top:1.5rem">¿Todavía no tenés usuario? Te lo damos en tu primera sesión. Si necesitás ayuda, <a href="contacto.html">escribinos</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>Mentendes</h2>
+          <p>Centro de atención psicológica.<br>Zona oeste, Gran Buenos Aires.</p>
+        </div>
+        <div>
+          <h2>Secciones</h2>
+          <ul>
+            <li><a href="profesionales.html">Profesionales</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="turnos.html">Central de turnos</a></li>
+            <li><a href="acceso.html">Mi espacio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="tel:+541100000000">(011) 0000-0000</a></li>
+            <li><a href="mailto:hola@mentendes.com.ar">hola@mentendes.com.ar</a></li>
+            <li>Lun. a vie. de 8 a 21 h</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__urgencia"><strong>¿Estás atravesando una urgencia?</strong> Este sitio no ofrece atención de emergencias. Llamá al 135 (Centro de Asistencia al Suicida, gratuito desde CABA y GBA) o acercate a la guardia más cercana.</p>
+      <p>&copy; 2026 Mentendes. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
