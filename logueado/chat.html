@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat con tu profesional | Mentendes</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="logo" href="index.html">
+        <svg class="logo__cabeza" viewBox="0 0 82 48" aria-hidden="true" focusable="false">
+          <path class="cabeza__contorno" transform="translate(56 0) scale(-1 1)" d="M14 47 C 14 41, 8 36, 8 26 C 8 13, 17 4, 28 4 C 38 4, 45 11, 45 20 L 48.5 26.5 C 49 28, 48 29, 46 29 L 46 31 C 47 31.5, 47 33, 45.5 33.5 C 46 35.5, 45 37.5, 42 37.5 L 38.5 37.5 C 36 37.5, 35 41, 35 47"/>
+          <g class="cabeza__enredo">
+            <ellipse cx="29" cy="18" rx="8" ry="5.5" transform="rotate(20 29 18)"/>
+            <ellipse cx="32" cy="21" rx="7" ry="4.5" transform="rotate(-40 32 21)"/>
+            <ellipse cx="30" cy="20" rx="4.5" ry="8" transform="rotate(12 30 20)"/>
+            <ellipse cx="27" cy="22" rx="6" ry="3.5" transform="rotate(65 27 22)"/>
+          </g>
+          <path class="ovillo__hilo" pathLength="1" d="M31 16 C 38 12, 40 22, 33 24 C 26 26, 24 16, 32 14 C 39 12, 42 21, 47 19 C 53 16, 56 26, 63 21 S 73 13, 80 17"/>
+        </svg>
+        Mentendes
+      </a>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="profesionales.html">Profesionales</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="turnos.html">Turnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a class="menu__usuario" href="mi-espacio.html" aria-current="page"><span class="menu__avatar" aria-hidden="true">A</span>Ana</a></li>
+          <li><a class="menu__salir" href="../index.html">Salir</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="barra-sesion">
+    <div class="contenedor">
+      <p><span aria-hidden="true">🔒</span> Sesión iniciada como <strong>Ana López</strong> · Paciente de Lic. Laura Gómez</p>
+    </div>
+  </div>
+
+  <main id="contenido">
+    <!-- Vista del chat DENTRO del horario de atención de la profesional.
+         La vista fuera de horario está en chat-fuera-de-horario.html -->
+    <section class="seccion">
+      <div class="contenedor espacio-layout">
+        <aside class="tarjeta panel-lateral">
+          <nav aria-label="Secciones de Mi espacio">
+            <ul>
+              <li><a href="mi-espacio.html#proximo-turno">Próximo turno</a></li>
+              <li><a href="chat.html" aria-current="page">Chat con tu profesional</a></li>
+              <li><a href="mi-espacio.html#devoluciones">Devoluciones</a></li>
+              <li><a href="mi-espacio.html#materiales">Materiales</a></li>
+              <li><a href="turnos.html">Pedir o cambiar turno</a></li>
+              <li><a href="../index.html">Cerrar sesión</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <section class="chat" aria-labelledby="titulo-chat">
+          <header class="chat__cabecera">
+            <span class="chat__avatar" aria-hidden="true">LG</span>
+            <div>
+              <h1 class="h3" id="titulo-chat">Lic. Laura Gómez</h1>
+              <p class="chat__estado chat__estado--disponible">En horario de atención</p>
+              <p class="ayuda">Horario del chat: lunes a viernes de 9 a 17 h</p>
+            </div>
+          </header>
+
+          <p class="chat__nota">🔒 Conversación privada: solo la ven vos y tu profesional. El chat no es para urgencias: si lo necesitás, llamá al 135 o andá a la guardia más cercana.</p>
+
+          <ol class="chat__mensajes" aria-label="Mensajes">
+            <li class="chat__dia">Ayer, jueves 12 de noviembre</li>
+            <li class="mensaje mensaje--profesional">
+              <p>Hola Ana, te dejé en Mi espacio el registro semanal que charlamos en la sesión. Cualquier duda, me escribís por acá.</p>
+              <span class="mensaje__hora">16:48</span>
+            </li>
+            <li class="mensaje mensaje--paciente">
+              <p>¡Gracias, Laura! Lo empiezo hoy.</p>
+              <span class="mensaje__hora">16:52 · Leído</span>
+            </li>
+
+            <li class="chat__dia">Hoy, viernes 13 de noviembre</li>
+            <li class="mensaje mensaje--paciente">
+              <p>Hola Laura, una consulta: ¿en el registro anoto también los días que estoy tranquila?</p>
+              <span class="mensaje__hora">10:12 · Leído</span>
+            </li>
+            <li class="mensaje mensaje--profesional">
+              <p>¡Muy buena pregunta! Sí, anotá también esos días: nos sirve para ver qué cosas te hacen bien.</p>
+              <span class="mensaje__hora">10:30</span>
+            </li>
+            <li class="mensaje mensaje--paciente">
+              <p>Perfecto, gracias 😊</p>
+              <span class="mensaje__hora">10:31 · Enviado</span>
+            </li>
+          </ol>
+
+          <form class="chat__escribir" action="#" method="post">
+            <label class="solo-lectores" for="mensaje">Escribí tu mensaje para Laura</label>
+            <textarea id="mensaje" name="mensaje" rows="2" placeholder="Escribí tu mensaje…"></textarea>
+            <button class="boton" type="submit">Enviar</button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p class="pie__urgencia"><strong>¿Estás atravesando una urgencia?</strong> Este sitio no ofrece atención de emergencias. Llamá al 135 (Centro de Asistencia al Suicida, gratuito desde CABA y GBA) o acercate a la guardia más cercana.</p>
+      <p>&copy; 2026 Mentendes. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

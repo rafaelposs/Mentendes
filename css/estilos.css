@@ -100,6 +100,16 @@ a {
   top: 1rem;
 }
 
+/* Texto que solo leen los lectores de pantalla (no se ve) */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .contenedor {
   width: 100%;
   max-width: var(--ancho-max);
@@ -251,6 +261,115 @@ a {
 .menu .menu__acceso[aria-current="page"] {
   background: var(--verde-oscuro);
   color: var(--blanco);
+}
+
+/* ---------- Sesión iniciada (carpeta logueado/) ---------- */
+.menu .menu__usuario {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.9rem 0.3rem 0.3rem;
+  background: var(--lavanda);
+  color: #4b4180;
+}
+.menu .menu__usuario:hover,
+.menu .menu__usuario[aria-current="page"] {
+  background: #d7cfe8;
+}
+
+.menu__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #8a7fb8;
+  color: var(--blanco);
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.menu .menu__salir {
+  color: var(--texto-suave);
+  text-decoration: underline;
+}
+
+.barra-sesion {
+  background: var(--lavanda);
+  color: #3b3466;
+  font-size: 0.95rem;
+}
+.barra-sesion p {
+  margin: 0;
+  padding: 0.45rem 0;
+}
+
+.resumen-turno {
+  border-top: 6px solid #8a7fb8;
+}
+.resumen-turno__fecha {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.tu-profesional {
+  display: inline-block;
+  margin: 0 0 0.4rem;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: #8a7fb8;
+  color: var(--blanco);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.insignia--nueva {
+  background: var(--terracota);
+  color: var(--blanco);
+  margin-right: 0.3rem;
+}
+
+/* ---------- Primer ingreso y cambio de contraseña ---------- */
+.etiqueta--lavanda {
+  background: var(--lavanda);
+  color: #4b4180;
+}
+
+.primer-ingreso ol {
+  padding-left: 1.3rem;
+  margin: 0 0 1rem;
+}
+
+.requisitos {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+}
+
+/* Mensajes de error: solo aparecen después de que la persona
+   escribe algo que no cumple lo pedido (sin JavaScript, con :user-invalid) */
+.campo .error {
+  display: none;
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--alerta);
+}
+.campo input:user-invalid {
+  border-color: var(--alerta);
+}
+.campo input:user-invalid ~ .error {
+  display: block;
+}
+.campo input:user-valid {
+  border-color: var(--verde);
+}
+
+/* Datos que vienen del perfil y no se editan acá */
+input[readonly] {
+  background: var(--arena);
+  color: var(--texto-suave);
 }
 
 /* ---------- Botones ---------- */
@@ -847,8 +966,13 @@ fieldset {
   text-decoration: none;
   font-weight: 600;
 }
-.panel-lateral a:hover {
+.panel-lateral a:hover,
+.panel-lateral a[aria-current="page"] {
   background: var(--verde-claro);
+}
+.panel-lateral a[aria-current="page"] {
+  color: var(--verde-oscuro);
+  font-weight: 700;
 }
 
 .devolucion {
@@ -872,6 +996,176 @@ fieldset {
 }
 .material:last-child {
   border-bottom: 0;
+}
+
+/* ---------- Chat privado con el profesional ---------- */
+.chat {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--borde);
+}
+.chat__cabecera h1 {
+  margin: 0;
+}
+.chat__cabecera p {
+  margin: 0;
+}
+
+.chat__avatar {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+}
+
+/* Punto de color que indica si la profesional está disponible */
+.chat__estado {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.chat__estado::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.chat__estado--disponible {
+  color: var(--verde-oscuro);
+}
+.chat__estado--disponible::before {
+  background: #3a9a6a;
+}
+.chat__estado--ausente {
+  color: var(--texto-suave);
+}
+.chat__estado--ausente::before {
+  background: #9aa39f;
+}
+
+.chat__nota {
+  margin: 0;
+  padding: 0.6rem 1.5rem;
+  background: var(--arena);
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.chat__mensajes {
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--crema);
+  min-height: 320px;
+}
+
+.chat__dia {
+  align-self: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.15rem 0.8rem;
+  margin: 0.5rem 0;
+}
+
+/* Burbujas: la profesional a la izquierda, la paciente a la derecha */
+.mensaje {
+  max-width: 75%;
+  padding: 0.7rem 1rem 0.5rem;
+  border-radius: 16px;
+}
+.mensaje p {
+  margin: 0 0 0.2rem;
+}
+.mensaje--profesional {
+  align-self: flex-start;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-bottom-left-radius: 4px;
+}
+.mensaje--paciente {
+  align-self: flex-end;
+  background: var(--verde-claro);
+  border-bottom-right-radius: 4px;
+}
+.mensaje__hora {
+  display: block;
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.chat__escribir {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--borde);
+}
+.chat__escribir textarea {
+  min-height: 0;
+  flex: 1;
+}
+
+/* Fuera de horario: campo y botón deshabilitados */
+.chat__escribir textarea:disabled {
+  background: var(--arena);
+  cursor: not-allowed;
+}
+.chat__escribir .boton:disabled {
+  background: #b9c2be;
+  border-color: #b9c2be;
+  cursor: not-allowed;
+}
+
+.chat__cerrado {
+  margin: 0;
+  padding: 1.1rem 1.5rem;
+  background: var(--lavanda);
+  border-top: 1px solid var(--borde);
+}
+.chat__cerrado p {
+  margin: 0 0 0.5rem;
+}
+.chat__urgencia {
+  margin-bottom: 0 !important;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 560px) {
+  .mensaje {
+    max-width: 90%;
+  }
+  .chat__escribir {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 /* ---------- Contacto ---------- */

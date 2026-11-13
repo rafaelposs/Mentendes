@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Central de turnos | Mentendes</title>
-  <meta name="description" content="Pedí, modificá o cancelá tu turno en Mentendes. Atención presencial o virtual.">
+  <meta name="description" content="Pedí, modificá o cancelá tu turno en Mentendes. Atención 100% online por videollamada.">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
     <section class="cabecera-pagina">
       <div class="contenedor">
         <h1>Central de turnos</h1>
-        <p>Consultá los horarios disponibles y elegí si querés atenderte en el consultorio o por videollamada.</p>
+        <p>Consultá los horarios disponibles y pedí tu sesión por videollamada.</p>
       </div>
     </section>
 
@@ -65,19 +65,10 @@
               </select>
             </div>
 
-            <fieldset class="campo">
-              <legend>Modalidad</legend>
-              <div class="opciones">
-                <label class="opcion">
-                  <input type="radio" name="modalidad" value="presencial" checked>
-                  <span><strong>Presencial</strong><br>En el consultorio</span>
-                </label>
-                <label class="opcion">
-                  <input type="radio" name="modalidad" value="virtual">
-                  <span><strong>Virtual</strong><br>Por videollamada</span>
-                </label>
-              </div>
-            </fieldset>
+            <div class="aviso-privado">
+              <span aria-hidden="true">💻</span>
+              <p>Todas las sesiones son por <strong>videollamada</strong>. El enlace aparece en Mi espacio antes de cada sesión.</p>
+            </div>
 
             <div class="campo">
               <label for="fecha">Día</label>
@@ -128,6 +119,11 @@
               <span class="ayuda">Te enviamos la confirmación y un recordatorio el día anterior.</span>
             </div>
 
+            <div class="aviso-privado">
+              <span aria-hidden="true">🔑</span>
+              <p><strong>¿Es tu primer turno?</strong> Cuando tu profesional lo confirme, te llegan por correo y por mensaje tu usuario (tu DNI), una contraseña temporal y el enlace de la videollamada.</p>
+            </div>
+
             <button class="boton" type="submit">Confirmar turno</button>
           </form>
         </div>
@@ -142,7 +138,7 @@
               <div>
                 <p class="turno__dato"><strong>Jueves 12 de noviembre, 16:00</strong></p>
                 <p class="turno__dato">Lic. Laura Gómez</p>
-                <span class="insignia">Presencial</span>
+                <span class="insignia insignia--virtual">Videollamada</span>
               </div>
               <div class="botones botones--chicos">
                 <a class="boton boton--secundario" href="#">Modificar</a>
@@ -154,7 +150,7 @@
               <div>
                 <p class="turno__dato"><strong>Jueves 19 de noviembre, 16:00</strong></p>
                 <p class="turno__dato">Lic. Laura Gómez</p>
-                <span class="insignia insignia--virtual">Virtual</span>
+                <span class="insignia insignia--virtual">Videollamada</span>
               </div>
               <div class="botones botones--chicos">
                 <a class="boton boton--secundario" href="#">Modificar</a>

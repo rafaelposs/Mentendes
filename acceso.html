@@ -52,13 +52,14 @@
           <h2 class="h3">Paso 1 · Tus datos</h2>
           <form class="formulario" action="#" method="post">
             <div class="campo">
-              <label for="a-dni">DNI</label>
+              <label for="a-dni">Usuario (tu DNI)</label>
               <input type="text" id="a-dni" name="dni" inputmode="numeric" autocomplete="username">
             </div>
             <div class="campo">
               <label for="a-clave">Contraseña</label>
               <input type="password" id="a-clave" name="clave" autocomplete="current-password">
-              <span class="ayuda"><a href="contacto.html">¿Olvidaste tu contraseña?</a></span>
+              <span class="ayuda">Si es tu primer ingreso, usá la contraseña temporal que te envió tu profesional.</span>
+              <span class="ayuda">¿Olvidaste tu contraseña? Pedile una nueva contraseña temporal a tu profesional <a href="contacto.html">escribiéndonos acá</a>.</span>
             </div>
           </form>
         </div>
@@ -66,17 +67,31 @@
         <!-- Paso 2: código de verificación -->
         <div class="tarjeta" style="margin-top:1.5rem">
           <h2 class="h3">Paso 2 · Código de verificación</h2>
-          <form class="formulario" action="mi-espacio.html" method="get">
+          <form class="formulario" action="logueado/mi-espacio.html" method="get">
             <div class="campo">
               <label for="a-codigo">Código de 6 números</label>
               <input type="text" id="a-codigo" name="codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="6">
-              <span class="ayuda">Te lo enviamos por mensaje al celular que registraste en el centro.</span>
+              <span class="ayuda">Te lo enviamos por mensaje al celular que dejaste al pedir tu turno.</span>
             </div>
             <button class="boton" type="submit">Ingresar</button>
           </form>
         </div>
 
-        <p style="margin-top:1.5rem">¿Todavía no tenés usuario? Te lo damos en tu primera sesión. Si necesitás ayuda, <a href="contacto.html">escribinos</a>.</p>
+        <!-- Primer ingreso: cómo llegan el usuario y la contraseña -->
+        <div class="tarjeta primer-ingreso" style="margin-top:1.5rem">
+          <h2 class="h3">¿Es tu primera vez?</h2>
+          <p>No tenés que crear una cuenta. Cuando tu profesional confirma tu primer turno, te envía por correo y por mensaje:</p>
+          <ol>
+            <li><strong>Tu usuario:</strong> es tu DNI.</li>
+            <li><strong>Una contraseña temporal.</strong></li>
+            <li><strong>El enlace de tu primera videollamada.</strong></li>
+          </ol>
+          <p>Ingresá con esos datos acá arriba. La primera vez te vamos a pedir que crees tu propia contraseña.</p>
+          <!-- En el sitio real, el sistema detecta que la contraseña es temporal y lleva solo a esta pantalla.
+               Como es una maqueta sin servidor, este botón muestra cómo se ve ese paso. -->
+          <a class="boton boton--secundario" href="logueado/cambiar-contrasena.html">Ver el primer ingreso</a>
+          <p class="ayuda" style="margin-top:1rem">¿Todavía no pediste turno? <a href="turnos.html">Pedí tu primer turno</a> y te llegan tus datos de acceso.</p>
+        </div>
       </div>
     </section>
   </main>
