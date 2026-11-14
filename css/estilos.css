@@ -191,38 +191,6 @@ a {
 .ovillo__hilo {
   stroke: var(--terracota);
   stroke-width: 1.8;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 0;
-  animation: desenredar 2s ease-in-out 0.3s both;
-}
-
-/* El enredo gira un poco mientras el hilo se suelta */
-.cabeza__enredo {
-  transform-origin: 30px 20px;
-  animation: girar 2s ease-out 0.3s both;
-}
-
-.logo:hover .ovillo__hilo {
-  animation: desenredar 2s ease-in-out both;
-}
-.logo:hover .cabeza__enredo {
-  animation: girar-hover 2s ease-out both;
-}
-
-@keyframes desenredar {
-  from { stroke-dashoffset: 1; }
-  to   { stroke-dashoffset: 0; }
-}
-
-@keyframes girar {
-  from { transform: rotate(-120deg); }
-  to   { transform: rotate(0deg); }
-}
-
-/* Igual que "girar", pero con otro nombre para que se repita al pasar el ratón */
-@keyframes girar-hover {
-  from { transform: rotate(-120deg); }
-  to   { transform: rotate(0deg); }
 }
 
 .menu ul {
@@ -310,6 +278,78 @@ a {
 .resumen-turno__fecha {
   font-size: 1.2rem;
   line-height: 1.4;
+}
+
+/* ---------- Turno confirmado ---------- */
+.confirmacion {
+  max-width: 760px;
+  margin: 0 auto;
+  border-top: 6px solid var(--verde);
+}
+
+.confirmacion__cabecera {
+  text-align: center;
+}
+
+.confirmacion__cabecera h1 {
+  margin-bottom: 0.5rem;
+}
+
+.confirmacion__icono {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--blanco);
+  font-size: 2.4rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 10px var(--verde-claro);
+}
+
+.confirmacion__datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin: 1.75rem 0 1rem;
+}
+
+.confirmacion__datos div {
+  background: var(--crema);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.confirmacion__datos dt {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.confirmacion__datos dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.confirmacion__codigo {
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.confirmacion__botones {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.confirmacion__pie {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.confirmacion__pie .botones {
+  justify-content: center;
 }
 
 .tu-profesional {
@@ -437,13 +477,64 @@ input[readonly] {
   max-width: 560px;
 }
 
-.portada__imagen {
-  aspect-ratio: 4 / 3;
-  border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
-  background:
-    radial-gradient(circle at 30% 30%, #b9d3c7 0 25%, transparent 26%),
-    radial-gradient(circle at 70% 65%, #d7cfe8 0 30%, transparent 31%),
-    var(--verde-claro);
+/* ---------- Ilustración del hero ---------- */
+.portada__imagen .ilustracion {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ilustracion__fondo {
+  fill: #d4e5dc;
+}
+
+.ilustracion__burbuja-fondo {
+  fill: var(--lavanda);
+}
+
+.ilustracion__hojas path {
+  fill: #b9d3c7;
+}
+
+.ilustracion__perfil--profesional {
+  fill: var(--verde);
+}
+
+.ilustracion__perfil--paciente {
+  fill: #a99fcb;
+}
+
+.ilustracion__calma circle {
+  fill: none;
+  stroke: var(--verde-claro);
+  stroke-width: 2.5;
+  opacity: 0.8;
+}
+
+.ilustracion__enredo {
+  fill: none;
+  stroke: var(--terracota);
+  stroke-width: 3;
+}
+
+.ilustracion__hilo {
+  fill: none;
+  stroke: var(--terracota);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.ilustracion__globo path {
+  fill: var(--blanco);
+  filter: drop-shadow(0 3px 6px rgba(36, 48, 44, 0.12));
+}
+
+.ilustracion__globo circle {
+  fill: var(--verde);
+}
+
+.ilustracion__globo--der circle {
+  fill: #8a7fb5;
 }
 
 .etiqueta {

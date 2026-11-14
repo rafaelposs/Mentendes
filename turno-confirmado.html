@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turno confirmado | Mentendes</title>
+  <meta name="description" content="Tu turno en Mentendes quedó confirmado: día, horario y próximos pasos.">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="logo" href="index.html">
+        <svg class="logo__cabeza" viewBox="0 0 82 48" aria-hidden="true" focusable="false">
+          <path class="cabeza__contorno" transform="translate(56 0) scale(-1 1)" d="M14 47 C 14 41, 8 36, 8 26 C 8 13, 17 4, 28 4 C 38 4, 45 11, 45 20 L 48.5 26.5 C 49 28, 48 29, 46 29 L 46 31 C 47 31.5, 47 33, 45.5 33.5 C 46 35.5, 45 37.5, 42 37.5 L 38.5 37.5 C 36 37.5, 35 41, 35 47"/>
+          <g class="cabeza__enredo">
+            <ellipse cx="29" cy="18" rx="8" ry="5.5" transform="rotate(20 29 18)"/>
+            <ellipse cx="32" cy="21" rx="7" ry="4.5" transform="rotate(-40 32 21)"/>
+            <ellipse cx="30" cy="20" rx="4.5" ry="8" transform="rotate(12 30 20)"/>
+            <ellipse cx="27" cy="22" rx="6" ry="3.5" transform="rotate(65 27 22)"/>
+          </g>
+          <path class="ovillo__hilo" d="M31 16 C 38 12, 40 22, 33 24 C 26 26, 24 16, 32 14 C 39 12, 42 21, 47 19 C 53 16, 56 26, 63 21 S 73 13, 80 17"/>
+        </svg>
+        Mentendes
+      </a>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="profesionales.html">Profesionales</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="turnos.html" aria-current="page">Turnos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a class="menu__acceso" href="acceso.html">Mi espacio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Maqueta: en el sitio real estos datos salen del formulario de turnos -->
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="tarjeta confirmacion">
+          <div class="confirmacion__cabecera">
+            <span class="confirmacion__icono" aria-hidden="true">✓</span>
+            <h1>¡Turno confirmado!</h1>
+            <p>Te enviamos un correo a <strong>tu.correo@ejemplo.com</strong> con todos los datos.</p>
+          </div>
+
+          <dl class="confirmacion__datos">
+            <div><dt>Profesional</dt><dd>Lic. Martín Ruiz</dd></div>
+            <div><dt>Día y hora</dt><dd>Martes 17 de noviembre, 18:00</dd></div>
+            <div><dt>Modalidad</dt><dd>Videollamada · 50 minutos</dd></div>
+            <div><dt>Cobertura</dt><dd>Obra social</dd></div>
+          </dl>
+
+          <p class="confirmacion__codigo">Número de turno: <strong>MT-20481</strong></p>
+
+          <div class="aviso-privado">
+            <span aria-hidden="true">🔑</span>
+            <p><strong>Es tu primer turno.</strong> Antes de la sesión, Lic. Martín Ruiz te envía por correo y por mensaje tu usuario (tu DNI), una contraseña temporal y el enlace de la videollamada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--arena">
+      <div class="contenedor">
+        <h2>¿Qué sigue?</h2>
+        <ol class="pasos">
+          <li><h3>Revisá tu correo</h3><p>Ahí tenés la confirmación. Si no la ves, buscá en la carpeta de spam.</p></li>
+          <li><h3>Recibí tus datos</h3><p>Tu profesional te envía el usuario, la contraseña temporal y el enlace.</p></li>
+          <li><h3>Entrá a Mi espacio</h3><p>La primera vez vas a crear tu propia contraseña.</p></li>
+          <li><h3>El día del turno</h3><p>Conectate 5 minutos antes desde un lugar tranquilo, con cámara e internet.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor confirmacion__pie">
+        <p>¿Necesitás cambiar o cancelar el turno? Llamanos al <a href="tel:+541100000000">(011) 0000-0000</a> hasta 24 horas antes.</p>
+        <div class="botones">
+          <a class="boton" href="index.html">Volver al inicio</a>
+          <a class="boton boton--secundario" href="profesionales.html">Conocer a tu profesional</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <h2>Mentendes</h2>
+          <p>Centro de atención psicológica.<br>Zona oeste, Gran Buenos Aires.</p>
+        </div>
+        <div>
+          <h2>Secciones</h2>
+          <ul>
+            <li><a href="profesionales.html">Profesionales</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="turnos.html">Central de turnos</a></li>
+            <li><a href="acceso.html">Mi espacio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="tel:+541100000000">(011) 0000-0000</a></li>
+            <li><a href="mailto:hola@mentendes.com.ar">hola@mentendes.com.ar</a></li>
+            <li>Lun. a vie. de 8 a 21 h</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__urgencia"><strong>¿Estás atravesando una urgencia?</strong> Este sitio no ofrece atención de emergencias. Llamá al 135 (Centro de Asistencia al Suicida, gratuito desde CABA y GBA) o acercate a la guardia más cercana.</p>
+      <p>&copy; 2026 Mentendes. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
