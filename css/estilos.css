@@ -10,11 +10,16 @@
   /* Colores */
   --verde: #4f7a6a;          /* color principal (salvia) */
   --verde-oscuro: #2f5246;
-  --verde-claro: #e3eee9;
+  --verde-claro: #d6e9df;
   --crema: #faf7f2;          /* fondo general */
-  --arena: #f1ebe1;          /* fondo de secciones alternas */
-  --lavanda: #e9e6f3;        /* acento para la zona privada */
+  --arena: #f5e7d3;          /* fondo de secciones alternas */
+  --lavanda: #e4ddf5;        /* acento para la zona privada */
+  --lavanda-fuerte: #6f63a3;
   --terracota: #c0694e;      /* hilo del logo */
+  --terracota-oscuro: #a4513a;
+  --terracota-claro: #f8ded3;
+  --mostaza: #e3ac42;
+  --mostaza-claro: #fcedc9;
   --texto: #24302c;
   --texto-suave: #55625d;
   --blanco: #ffffff;
@@ -1426,6 +1431,74 @@ details[open] summary {
   border-top: 1px solid #3d4f48;
   padding-top: 1.5rem;
   font-size: 0.95rem;
+}
+
+/* ---------- Toques de color ----------
+   Para que el sitio no se vea tan pálido: los colores se van
+   alternando (verde, terracota, mostaza y lavanda). */
+
+/* Franja de colores arriba del encabezado */
+.encabezado::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, var(--verde), var(--mostaza), var(--terracota), var(--lavanda-fuerte));
+}
+
+/* Portada y cabeceras con degradé de color */
+.portada {
+  background: linear-gradient(135deg, var(--verde-claro) 0%, #f4ecdf 55%, var(--terracota-claro) 100%);
+}
+
+.cabecera-pagina {
+  background: linear-gradient(120deg, var(--verde-claro) 0%, var(--lavanda) 100%);
+}
+
+.etiqueta {
+  background: var(--terracota-claro);
+  color: var(--terracota-oscuro);
+}
+
+/* Tarjetas: un borde de color arriba que va cambiando */
+.grilla > .tarjeta {
+  border-top: 5px solid var(--verde);
+}
+.grilla > .tarjeta:nth-child(4n+2) {
+  border-top-color: var(--terracota);
+}
+.grilla > .tarjeta:nth-child(4n+3) {
+  border-top-color: var(--mostaza);
+}
+.grilla > .tarjeta:nth-child(4n+4) {
+  border-top-color: var(--lavanda-fuerte);
+}
+
+/* Los íconos de las tarjetas también cambian de color */
+.grilla > .tarjeta:nth-child(4n+2) .tarjeta__icono {
+  background: var(--terracota-claro);
+}
+.grilla > .tarjeta:nth-child(4n+3) .tarjeta__icono {
+  background: var(--mostaza-claro);
+}
+.grilla > .tarjeta:nth-child(4n+4) .tarjeta__icono {
+  background: var(--lavanda);
+}
+
+/* Las fotos de servicios quedan debajo del borde de color, sin esquinas redondeadas */
+.grilla > .tarjeta .tarjeta__foto {
+  border-radius: 0;
+}
+
+/* Números de los pasos en colores distintos */
+.pasos li:nth-child(4n+2)::before {
+  background: var(--terracota-oscuro);
+}
+.pasos li:nth-child(4n+3)::before {
+  background: var(--mostaza);
+  color: var(--texto);
+}
+.pasos li:nth-child(4n+4)::before {
+  background: var(--lavanda-fuerte);
 }
 
 /* ---------- Adaptación a pantallas chicas ---------- */
