@@ -834,10 +834,64 @@ input[readonly] {
   background: var(--blanco);
   border-top: 6px solid var(--verde);
   box-shadow: var(--sombra);
+  overflow: hidden;
 }
 
 .modalidad--virtual {
   border-top-color: #8a7fb8;
+}
+
+/* ---------- Fotos para hacer el sitio más cálido ---------- */
+/* Sobre el centro: texto a la izquierda, foto a la derecha */
+.sobre {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.sobre .seccion__intro {
+  margin-bottom: 1rem;
+}
+
+.sobre__foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 24px;
+  box-shadow: var(--sombra);
+}
+
+/* Foto de borde a borde arriba de cada modalidad (compensa el padding de 2rem) */
+.modalidad__foto {
+  display: block;
+  width: calc(100% + 4rem);
+  max-width: none;
+  margin: -2rem -2rem 1.5rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Foto de borde a borde arriba de cada tarjeta de servicios (compensa el padding de 1.75rem) */
+.tarjeta__foto {
+  display: block;
+  width: calc(100% + 3.5rem);
+  max-width: none;
+  margin: -1.75rem -1.75rem 1.25rem;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: calc(var(--radio) - 1px) calc(var(--radio) - 1px) 0 0;
+}
+
+@media (max-width: 860px) {
+  .sobre {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 /* ---------- Formularios ---------- */
@@ -932,11 +986,15 @@ fieldset {
 }
 
 /* ---------- Central de turnos ---------- */
+/* Una sola columna centrada: primero el formulario y abajo de todo la ayuda */
 .turnos-layout {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
   gap: 2rem;
-  align-items: start;
+  max-width: 760px;
+}
+
+.turnos-layout aside .tarjeta {
+  text-align: center;
 }
 
 .horarios {
