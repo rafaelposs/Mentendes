@@ -60,26 +60,102 @@
              Fotos: guardarlas en img/profesionales/ con el nombre que indica cada ficha.
              Mientras no exista la foto, se muestran las iniciales.
              Para cambiar una foto, cambiá la ruta dentro de url(...) en su ficha. -->
-        <nav class="indice-equipo" aria-label="Ir a un profesional">
-          <ul class="chips">
-            <li><a href="#laura-gomez">Laura Gómez</a></li>
-            <li><a href="#martin-ruiz">Martín Ruiz</a></li>
-            <li><a href="#sofia-pereyra">Sofía Pereyra</a></li>
-            <li><a href="#diego-acosta">Diego Acosta</a></li>
-            <li><a href="#valeria-castro">Valeria Castro</a></li>
-            <li><a href="#julian-medina">Julián Medina</a></li>
-          </ul>
-        </nav>
+        <p class="carrusel__ayuda">Deslizá para ver a todo el equipo y tocá una tarjeta para ver el perfil completo.</p>
+        <ul class="carrusel" aria-label="Profesionales del centro">
+          <li class="carrusel__item">
+            <article class="perfil">
+              <div class="ficha__foto">
+                <span aria-hidden="true">LG</span>
+                <span class="ficha__img" style="background-image: url('../img/profesionales/laura-gomez.jpg'); background-position: 68% top"></span>
+              </div>
+              <p class="tu-profesional">Tu profesional</p>
+              <h2 class="h3">Lic. Laura Gómez</h2>
+              <span class="enfoque enfoque--psicoanalisis"><span>Enfoque</span> Psicoanálisis</span>
+              <p class="profesional__especialidad">Psicología clínica de adultos</p>
+              <p class="perfil__horario">Atiende: Lun a vie · 9 a 17 h</p>
+              <button class="boton boton--secundario perfil__boton" type="button" popovertarget="laura-gomez">Ver perfil completo</button>
+            </article>
+          </li>
+          <li class="carrusel__item">
+            <article class="perfil">
+              <div class="ficha__foto">
+                <span aria-hidden="true">MR</span>
+                <span class="ficha__img" style="background-image: url('../img/profesionales/martin-ruiz.jpg')"></span>
+              </div>
+              <h2 class="h3">Lic. Martín Ruiz</h2>
+              <span class="enfoque enfoque--integrativo"><span>Enfoque</span> Integrativo</span>
+              <p class="profesional__especialidad">Adolescentes y jóvenes</p>
+              <p class="perfil__horario">Atiende: Lun a vie · 14 a 21 h</p>
+              <button class="boton boton--secundario perfil__boton" type="button" popovertarget="martin-ruiz">Ver perfil completo</button>
+            </article>
+          </li>
+          <li class="carrusel__item">
+            <article class="perfil">
+              <div class="ficha__foto">
+                <span aria-hidden="true">SP</span>
+                <span class="ficha__img" style="background-image: url('../img/profesionales/sofia-pereyra.jpg')"></span>
+              </div>
+              <h2 class="h3">Lic. Sofía Pereyra</h2>
+              <span class="enfoque enfoque--sistemico"><span>Enfoque</span> Sistémico</span>
+              <p class="profesional__especialidad">Terapia de pareja y familia</p>
+              <p class="perfil__horario">Atiende: Lun, mié y vie · 10 a 18 h</p>
+              <button class="boton boton--secundario perfil__boton" type="button" popovertarget="sofia-pereyra">Ver perfil completo</button>
+            </article>
+          </li>
+          <li class="carrusel__item">
+            <article class="perfil">
+              <div class="ficha__foto">
+                <span aria-hidden="true">DA</span>
+                <span class="ficha__img" style="background-image: url('../img/profesionales/diego-acosta.jpg')"></span>
+              </div>
+              <h2 class="h3">Lic. Diego Acosta</h2>
+              <span class="enfoque enfoque--cognitivo"><span>Enfoque</span> Cognitivo-conductual</span>
+              <p class="profesional__especialidad">Ansiedad y ataques de pánico</p>
+              <p class="perfil__horario">Atiende: Mar y jue · 9 a 20 h</p>
+              <button class="boton boton--secundario perfil__boton" type="button" popovertarget="diego-acosta">Ver perfil completo</button>
+            </article>
+          </li>
+          <li class="carrusel__item">
+            <article class="perfil">
+              <div class="ficha__foto">
+                <span aria-hidden="true">VC</span>
+                <span class="ficha__img" style="background-image: url('../img/profesionales/valeria-castro.jpg')"></span>
+              </div>
+              <h2 class="h3">Lic. Valeria Castro</h2>
+              <span class="enfoque enfoque--humanista"><span>Enfoque</span> Humanista</span>
+              <p class="profesional__especialidad">Duelo y orientación vocacional</p>
+              <p class="perfil__horario">Atiende: Lun a jue · 8 a 14 h</p>
+              <button class="boton boton--secundario perfil__boton" type="button" popovertarget="valeria-castro">Ver perfil completo</button>
+            </article>
+          </li>
+          <li class="carrusel__item">
+            <article class="perfil">
+              <div class="ficha__foto">
+                <span aria-hidden="true">JM</span>
+                <span class="ficha__img" style="background-image: url('../img/profesionales/julian-medina.jpg')"></span>
+              </div>
+              <h2 class="h3">Lic. Julián Medina</h2>
+              <span class="enfoque enfoque--gestalt"><span>Enfoque</span> Gestáltico</span>
+              <p class="profesional__especialidad">Adultos mayores</p>
+              <p class="perfil__horario">Atiende: Lun a vie · 9 a 13 h</p>
+              <button class="boton boton--secundario perfil__boton" type="button" popovertarget="julian-medina">Ver perfil completo</button>
+            </article>
+          </li>
+        </ul>
 
-        <article class="tarjeta ficha" id="laura-gomez">
+        <!-- Perfiles completos: se abren como ventana (popover) al tocar "Ver perfil completo".
+             El atributo popover es HTML puro: no hace falta JavaScript. -->
+        <div class="modal" id="laura-gomez" popover aria-labelledby="titulo-laura-gomez">
+          <button class="modal__cerrar" type="button" popovertarget="laura-gomez" popovertargetaction="hide" aria-label="Cerrar">✕</button>
+          <article class="ficha">
           <div class="ficha__foto">
             <span aria-hidden="true">LG</span>
             <span class="ficha__img" style="background-image: url('../img/profesionales/laura-gomez.jpg'); background-position: 68% top"></span>
           </div>
           <div class="ficha__info">
             <p class="tu-profesional">Tu profesional</p>
-            <h2 class="h3">Lic. Laura Gómez</h2>
-            <a class="enfoque enfoque--psicoanalisis" href="#enfoques"><span>Enfoque</span> Psicoanálisis</a>
+            <h2 class="h3" id="titulo-laura-gomez">Lic. Laura Gómez</h2>
+            <span class="enfoque enfoque--psicoanalisis"><span>Enfoque</span> Psicoanálisis</span>
             <p class="profesional__especialidad">Psicología clínica de adultos</p>
             <p>Ansiedad, estrés y acompañamiento en momentos de cambio.</p>
             <dl class="ficha__datos">
@@ -107,21 +183,24 @@
             <ul class="chips chips--izq">
               <li>Obra social</li>
             </ul>
-            <div class="botones">
+          </div>
+            <div class="modal__acciones">
               <a class="boton" href="turnos.html">Pedir otro turno con Laura</a>
               <a class="boton boton--secundario" href="chat.html">Escribirle por chat</a>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
 
-        <article class="tarjeta ficha" id="martin-ruiz">
+        <div class="modal" id="martin-ruiz" popover aria-labelledby="titulo-martin-ruiz">
+          <button class="modal__cerrar" type="button" popovertarget="martin-ruiz" popovertargetaction="hide" aria-label="Cerrar">✕</button>
+          <article class="ficha">
           <div class="ficha__foto">
             <span aria-hidden="true">MR</span>
             <span class="ficha__img" style="background-image: url('../img/profesionales/martin-ruiz.jpg')"></span>
           </div>
           <div class="ficha__info">
-            <h2 class="h3">Lic. Martín Ruiz</h2>
-            <a class="enfoque enfoque--integrativo" href="#enfoques"><span>Enfoque</span> Integrativo</a>
+            <h2 class="h3" id="titulo-martin-ruiz">Lic. Martín Ruiz</h2>
+            <span class="enfoque enfoque--integrativo"><span>Enfoque</span> Integrativo</span>
             <p class="profesional__especialidad">Adolescentes y jóvenes</p>
             <p>Atención a partir de los 16 años: vínculos, estudio y proyecto de vida.</p>
             <dl class="ficha__datos">
@@ -149,18 +228,23 @@
             <ul class="chips chips--izq">
               <li>Prepaga</li>
             </ul>
-            <a class="boton" href="turnos.html">Pedir turno con Martín</a>
           </div>
-        </article>
+            <div class="modal__acciones">
+              <a class="boton" href="turnos.html">Pedir turno con Martín</a>
+            </div>
+          </article>
+        </div>
 
-        <article class="tarjeta ficha" id="sofia-pereyra">
+        <div class="modal" id="sofia-pereyra" popover aria-labelledby="titulo-sofia-pereyra">
+          <button class="modal__cerrar" type="button" popovertarget="sofia-pereyra" popovertargetaction="hide" aria-label="Cerrar">✕</button>
+          <article class="ficha">
           <div class="ficha__foto">
             <span aria-hidden="true">SP</span>
             <span class="ficha__img" style="background-image: url('../img/profesionales/sofia-pereyra.jpg')"></span>
           </div>
           <div class="ficha__info">
-            <h2 class="h3">Lic. Sofía Pereyra</h2>
-            <a class="enfoque enfoque--sistemico" href="#enfoques"><span>Enfoque</span> Sistémico</a>
+            <h2 class="h3" id="titulo-sofia-pereyra">Lic. Sofía Pereyra</h2>
+            <span class="enfoque enfoque--sistemico"><span>Enfoque</span> Sistémico</span>
             <p class="profesional__especialidad">Terapia de pareja y familia</p>
             <p>Comunicación, conflictos y acompañamiento familiar.</p>
             <dl class="ficha__datos">
@@ -188,18 +272,23 @@
             <ul class="chips chips--izq">
               <li>Particular</li>
             </ul>
-            <a class="boton" href="turnos.html">Pedir turno con Sofía</a>
           </div>
-        </article>
+            <div class="modal__acciones">
+              <a class="boton" href="turnos.html">Pedir turno con Sofía</a>
+            </div>
+          </article>
+        </div>
 
-        <article class="tarjeta ficha" id="diego-acosta">
+        <div class="modal" id="diego-acosta" popover aria-labelledby="titulo-diego-acosta">
+          <button class="modal__cerrar" type="button" popovertarget="diego-acosta" popovertargetaction="hide" aria-label="Cerrar">✕</button>
+          <article class="ficha">
           <div class="ficha__foto">
             <span aria-hidden="true">DA</span>
             <span class="ficha__img" style="background-image: url('../img/profesionales/diego-acosta.jpg')"></span>
           </div>
           <div class="ficha__info">
-            <h2 class="h3">Lic. Diego Acosta</h2>
-            <a class="enfoque enfoque--cognitivo" href="#enfoques"><span>Enfoque</span> Cognitivo-conductual</a>
+            <h2 class="h3" id="titulo-diego-acosta">Lic. Diego Acosta</h2>
+            <span class="enfoque enfoque--cognitivo"><span>Enfoque</span> Cognitivo-conductual</span>
             <p class="profesional__especialidad">Ansiedad y ataques de pánico</p>
             <p>Ataques de pánico, fobias y trastornos del estado de ánimo.</p>
             <dl class="ficha__datos">
@@ -227,18 +316,23 @@
             <ul class="chips chips--izq">
               <li>Virtual</li><li>Obra social</li><li>Prepaga</li>
             </ul>
-            <a class="boton" href="turnos.html">Pedir turno con Diego</a>
           </div>
-        </article>
+            <div class="modal__acciones">
+              <a class="boton" href="turnos.html">Pedir turno con Diego</a>
+            </div>
+          </article>
+        </div>
 
-        <article class="tarjeta ficha" id="valeria-castro">
+        <div class="modal" id="valeria-castro" popover aria-labelledby="titulo-valeria-castro">
+          <button class="modal__cerrar" type="button" popovertarget="valeria-castro" popovertargetaction="hide" aria-label="Cerrar">✕</button>
+          <article class="ficha">
           <div class="ficha__foto">
             <span aria-hidden="true">VC</span>
             <span class="ficha__img" style="background-image: url('../img/profesionales/valeria-castro.jpg')"></span>
           </div>
           <div class="ficha__info">
-            <h2 class="h3">Lic. Valeria Castro</h2>
-            <a class="enfoque enfoque--humanista" href="#enfoques"><span>Enfoque</span> Humanista</a>
+            <h2 class="h3" id="titulo-valeria-castro">Lic. Valeria Castro</h2>
+            <span class="enfoque enfoque--humanista"><span>Enfoque</span> Humanista</span>
             <p class="profesional__especialidad">Duelo y orientación vocacional</p>
             <p>Acompañamiento en pérdidas y en la elección de carrera u oficio.</p>
             <dl class="ficha__datos">
@@ -266,18 +360,23 @@
             <ul class="chips chips--izq">
               <li>Particular</li>
             </ul>
-            <a class="boton" href="turnos.html">Pedir turno con Valeria</a>
           </div>
-        </article>
+            <div class="modal__acciones">
+              <a class="boton" href="turnos.html">Pedir turno con Valeria</a>
+            </div>
+          </article>
+        </div>
 
-        <article class="tarjeta ficha" id="julian-medina">
+        <div class="modal" id="julian-medina" popover aria-labelledby="titulo-julian-medina">
+          <button class="modal__cerrar" type="button" popovertarget="julian-medina" popovertargetaction="hide" aria-label="Cerrar">✕</button>
+          <article class="ficha">
           <div class="ficha__foto">
             <span aria-hidden="true">JM</span>
             <span class="ficha__img" style="background-image: url('../img/profesionales/julian-medina.jpg')"></span>
           </div>
           <div class="ficha__info">
-            <h2 class="h3">Lic. Julián Medina</h2>
-            <a class="enfoque enfoque--gestalt" href="#enfoques"><span>Enfoque</span> Gestáltico</a>
+            <h2 class="h3" id="titulo-julian-medina">Lic. Julián Medina</h2>
+            <span class="enfoque enfoque--gestalt"><span>Enfoque</span> Gestáltico</span>
             <p class="profesional__especialidad">Adultos mayores</p>
             <p>Bienestar emocional, soledad y nuevas etapas de la vida.</p>
             <dl class="ficha__datos">
@@ -305,9 +404,12 @@
             <ul class="chips chips--izq">
               <li>Obra social</li>
             </ul>
-            <a class="boton" href="turnos.html">Pedir turno con Julián</a>
           </div>
-        </article>
+            <div class="modal__acciones">
+              <a class="boton" href="turnos.html">Pedir turno con Julián</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
